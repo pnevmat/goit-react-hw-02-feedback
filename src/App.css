@@ -1,0 +1,30 @@
+body {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    margin-right: auto;
+    margin-left: auto;
+    text-align: center;
+}
+
+h1 {
+    font-size: 40px;
+    margin-bottom: 30px;
+}
+
+h2 {
+    font-size: 30px;
+    margin-top: 0;
+    margin-bottom: 30px;
+}
+
+p {
+    font-weight: 500;
+    font-size: 20px;
+    text-align: left;
+}
+
+.section {
+    display: inline-block;
+    width: 100%;
+    max-width: 500px;
+}
