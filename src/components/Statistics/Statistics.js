@@ -5,18 +5,18 @@ import shortid from 'shortid';
 class Statistics extends Component {
 
     render() {
-        const state = this.props.State;
-        const StateArray = this.props.StateArray;
-        const TotalFeedback = this.props.TotalAndPositiveFeedback.total
-        const PositiveFeedback = this.props.TotalAndPositiveFeedback.PositiveFeedback
+        const state = this.props.state;
+        const stateArray = this.props.stateArray;
+        const totalFeedback = this.props.totalAndPositiveFeedback.total
+        const positiveFeedback = this.props.totalAndPositiveFeedback.positiveFeedback
         return (
             <>
                 <h2>Statistics</h2>
-                {StateArray.map(item => 
+                {stateArray.map(item => 
                     <p key={shortid.generate()}>{item}: {state[item]}</p>
                 )}
-                <p>Total: {TotalFeedback}</p>
-                <p>Positive Feedback: {isNaN(PositiveFeedback) ? 0 : PositiveFeedback}%</p>
+                <p>Total: {totalFeedback}</p>
+                <p>Positive Feedback: {isNaN(positiveFeedback) ? 0 : positiveFeedback}%</p>
                 
             </>
         );

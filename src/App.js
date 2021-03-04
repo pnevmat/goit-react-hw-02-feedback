@@ -12,7 +12,7 @@ class FidbackVidjet extends Component {
     bad: 0,
   };
 
-  ButtonClickHandler = option => {
+  buttonClickHandler = option => {
     this.setState(prevState => {
       return {
         [option]: prevState[option] + 1,
@@ -21,30 +21,30 @@ class FidbackVidjet extends Component {
   };
 
   countTotalFeedback = () => {
-    const total = Object.values(this.state).reduce((Feedback, value) => Feedback + value)
+    const total = Object.values(this.state).reduce((feedback, value) => feedback + value)
     return this.countPositiveFeedbackPercentage(total)
   };
 
   countPositiveFeedbackPercentage = (total) => {
-    const PositiveFeedback = (this.state.good * 100) / total
-    return {total: total, PositiveFeedback: PositiveFeedback}
+    const positiveFeedback = (this.state.good * 100) / total
+    return {total: total, positiveFeedback: positiveFeedback}
   };
   
   render() {
-    const StateArray = Object.keys(this.state);
-    const TotalAndPositiveFeedback = this.countTotalFeedback();
-    console.log(TotalAndPositiveFeedback.total)
+    const stateArray = Object.keys(this.state);
+    const totalAndPositiveFeedback = this.countTotalFeedback();
+    console.log(totalAndPositiveFeedback.total)
     return (
       <section className="section" title="">
         <FeedbackOptions
-          StateArray={StateArray}
-          ButtonClickHandler={this.ButtonClickHandler}
+          stateArray={stateArray}
+          buttonClickHandler={this.buttonClickHandler}
         />
-        {TotalAndPositiveFeedback.total > 0 ?
+        {totalAndPositiveFeedback.total > 0 ?
           <Statistics
-            State={this.state}
-            StateArray={StateArray}
-            TotalAndPositiveFeedback={TotalAndPositiveFeedback}
+            state={this.state}
+            stateArray={stateArray}
+            totalAndPositiveFeedback={totalAndPositiveFeedback}
           />
           :
           <Notification message={"No feedback given"}/>

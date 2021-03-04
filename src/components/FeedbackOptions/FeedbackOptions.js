@@ -9,14 +9,14 @@ class FeedbackOptions extends Component {
     handleClick = e => {
         e.preventDefault();
 
-        this.props.ButtonClickHandler(e.currentTarget.innerText)
+        this.props.buttonClickHandler(e.currentTarget.innerText)
     };
     
     render() {
         return (
             <>
                 <h1>Please leave feedback</h1>
-                {this.props.StateArray.map(item => 
+                {this.props.stateArray.map(item => 
                     <button
                         className={styles.button}
                         type="button"
